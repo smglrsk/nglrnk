@@ -36,7 +36,8 @@ config(['$routeProvider','$locationProvider', '$httpProvider', function($routePr
           //if ($rootScope.oauth) 
           //{
             
-            headersGetter()['Authorization'] = "Bearer "+'ffddd87bc8d3605dbecafffaa40e4a89514b57c8'; 
+            //headersGetter()['Authorization'] = "Bearer "+'ffddd87bc8d3605dbecafffaa40e4a89514b57c8'; 
+            headersGetter()['Authorization'] = "Bearer "+'030349a6d1c0c003fa7a104bf0dd8840d5931cc2'; 
           //}  
 
           if (data) 
