@@ -1,0 +1,36 @@
+<div ng-controller="RepoCtrl">
+   <div class="col-md-12">
+        <p class="back col-md-6">
+            <a ng-href="#/github/{{repoInfo.data.owner.login}}/">« Select Repository</a>
+        </p>
+        <p class="view-on-github col-md-6">
+            <a ng-href="{{repoInfo.data.html_url}}">View on GitHub</a>
+        </p>
+    </div>
+
+    <div class="col-md-12">
+        <div class="info col-md-8">
+            <h1>
+                <span class="avatar user-avatar">
+                    <img ng-src="{{repoInfo.data.owner.avatar_url}}" alt="{{repoInfo.data.owner.login}}'s avatar" />
+                </span>
+                <span class="user-login">{{repoInfo.data.owner.login}}</span> /
+                <span class="repo-name">{{repoInfo.data.name}}</span>
+            </h1>
+        </div>
+        <div class="stats col-md-4">
+            <ul class="col-md-12">
+                <li class="repo-watchers col-md-6">
+                    <b>{{repoInfo.data.watchers}}</b>
+                    <ng-pluralize count="repoInfo.data.watchers" when="watchForms">
+                    </ng-pluralize>
+                </li>
+                <li class="repo-forks col-md-6">
+                    <b>{{repoInfo.data.forks}}</b>
+                    <ng-pluralize count="repoInfo.data.forks" when="forkForms">
+                    </ng-pluralize>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

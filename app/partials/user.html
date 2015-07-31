@@ -1,0 +1,37 @@
+<div ng-controller="UserCtrl">
+    <div class="col-md-12">
+        <p class="back col-md-6">
+            <a href="#/">« Choose Someone Different</a>
+        </p>
+        <p class="view-on-github col-md-6">
+            <a href="{{user_info.data.html_url}}">View on GitHub</a>
+        </p>
+    </div>
+    <div class="col-md-12">
+        <div class="info col-md-8">
+            <h1>
+                <span class="avatar user-avatar">
+                    <img ng-src="{{user_info.data.avatar_url}}" alt="{{user_info.data.login}}'s avatar" />
+                </span>
+                <span class="user-login">{{user_info.data.login}}</span>
+                <span ng-show="user_info.data.name" class="user-name">
+                    ({{user_info.data.name}})
+                </span>
+            </h1>
+        </div>
+        <div class="stats col-md-4">
+            <ul class="col-md-12">
+                <li class="user-repos col-md-6">
+                    <b>{{user_info.data.public_repos}}</b>
+                    <ng-pluralize count="user_info.data.public_repos" when="publicRepoForms">
+                    </ng-pluralize>
+                </li>
+                <li class="user-followers col-md-6">
+                    <b>{{user_info.data.followers}}</b>
+                    <ng-pluralize count="user_info.data.followers" when="followerForms">
+                    </ng-pluralize>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

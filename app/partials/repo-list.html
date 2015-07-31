@@ -1,0 +1,35 @@
+<div ng-controller="RepoListCtrl">
+    <h2>Public Repositories</h2>
+
+    <ul class="repos">
+        <li ng-repeat="repo in repos.data | orderBy:'-watchers'" class="repo  col-md-12"  ng-click="goToLink(repo)">
+            <div class="repo-name  col-md-8">
+                <h3>
+                    <a href="#/github/{{repo.full_name}}/">{{repo.name}}</a>
+                </h3>
+                <p class="repo-desc">{{repo.description}}</p>
+            </div>
+            <div class="repo-stats  col-md-4">
+                <ul class="col-md-12">
+                    <li class="repo-lang col-md-4">
+                        <b>{{repo.language}}</b>
+                    </li>
+                    <li class="repo-watchers col-md-4">
+                        <b>{{repo.watchers}}</b>
+                        <span>
+                            <ng-pluralize count="repo.watchers" when="watchForms">
+                            </ng-pluralize>
+                        </span>
+                    </li>
+                    <li class="repo-forks  col-md-4">
+                        <b>{{repo.forks}}</b>
+                        <span>
+                            <ng-pluralize count="repo.forks" when="forkForms">
+                            </ng-pluralize>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,51 @@
+<!--
+<p>Angular Rank</p>
+-->
+
+
+ 
+
+
+
+ <div class="span7 text-center" ng-init="isDisabled = false">      
+ <button class="btn btn-primary btn-lg "  ng-click="onRefreshStatisticsClicked()" ng-disabled="isDisabled" >Start Angular Rank calculations</button> 		 
+ <div>
+
+ 	
+<p>
+<p>	
+
+<table class="table table-striped  table-hover table-bordered" ng-show="finished">
+        
+           <tr >
+		      <th><a href="" ng-click="reverse=false;order('name', false)">Name</a>
+		        (<a href="" ng-click="order('-name',false)">^</a>)</th>
+		      <th><a href="" ng-click="reverse=!reverse;order('login', reverse)">Login</a></th>
+		      <th><a href="" ng-click="reverse=!reverse;order('contributions',reverse)">Contributions</a></th>
+		      <th><a href="" ng-click="reverse=!reverse;order('followers',reverse)">Followers</a></th>
+		      <th><a href="" ng-click="reverse=!reverse;order('public_repos',reverse)">Public repos</a></th>
+		      <th><a href="" ng-click="reverse=!reverse;order('public_gists',reverse)">Public gists</a></th>
+		      <th><a href="" >Details</a></th>
+          </tr>
+
+
+
+
+		<tr class="animate-repeat" ng-repeat="contributor in contributors | orderBy:predicate:reverse">
+		     <td> {{contributor.name}} </td>
+		     <td> {{contributor.login}}  </td>
+		     <td>{{contributor.contributions}} </td>  
+		     <td>{{contributor.followers}} </td> 
+		     <td>{{contributor.public_repos}} </td> 
+		     <td>{{contributor.public_gists}} </td> 
+              
+              
+		      <td><button class="btn btn-primary" ng-click="onContributorClicked(contributor)">Details</button></td>
+		</tr>
+
+
+
+</table>
+
+
+		
